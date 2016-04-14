@@ -5,48 +5,29 @@ URL = require('socket.url')
 JSON = require('dkjson')
 HTTPS = require('ssl.https')
 ----config----
-local bot_api_key = ""
+local bot_api_key = "207507960:AAEFtYde193lStGc9pwnOU_2TJpWcrknoKk"
 local BASE_URL = "https://api.telegram.org/bot"..bot_api_key
 local BASE_FOLDER = ""
-local start = [[HI
-`/bold text`
-return *bold* text
+local start = [[
+🤖 لیست دستورات ربات کمکی آویرا :
 
-`/italic text`
-return _italic_ text
+🔶 بولد متن
+دریافت یک متن بولد
 
-`/link url text`
-markdown link
+🔷 کج متن
+دریافت متن _کج_
 
-`/code text`
-return `code` text
+🔶 لینک (متن( (آدرس)
+دریافت متن به صورت لینک
 
+🔷 کد متن
+دریافت متن به صورت کامپیوتری
 
-*-channel*
-*add bot to a channel then use this commands*
+🔶 تبدیل استیکر به عکس
+_فقط یک استیکر ارسال کنید_
 
-`/boldch @channelusername text`
-send *bold* text to a channel
-
-`/italicch @channelusername text`
-send _italic_ text to a channel
-
-`/linkch @channelusername url text`
-send markdown link to a channel
-
-`/codech @channelusername text`
-send `code` text to a channel
-
-
-*-other*
-
-*sticker to photo* 
-_just send a sticker_
-
-*photo to sticker*
-_just send a photo_
-
-[Source](https://github.com/pAyDaAr/lua-api-bot) ;-)
+🔷 تبدیل عکس به استیکر
+_فقط یک استیکر ارسال کنید_
 ]] 
 
 -------
@@ -55,7 +36,7 @@ _just send a photo_
 
 function is_admin(msg)-- Check if user is admin or not
   local var = false
-  local admins = {}-- put your id here
+  local admins = {179071599}-- put your id here
   for k,v in pairs(admins) do
     if msg.from.id == v then
       var = true
@@ -205,7 +186,7 @@ function bot_run()
 
 	bot = bot.result
 
-	local bot_info = "Username = @"..bot.username.."\nName = "..bot.first_name.."\nId = "..bot.id.." \nbased on linux-file-manager :D\nthx to @imandaneshi\neditor: @unfriendly"
+	local bot_info = "Username = @"..bot.username.."\nName = "..bot.first_name.."\nId = "..bot.id.." \nbased on linux-file-manager :D\nthx to @mohammadarak"
 
 	print(bot_info)
 
@@ -245,8 +226,8 @@ function msg_processor(msg)
 
   if msg.text then return end
 
-  elseif msg.text:match("^/bold (.*)") then
-	local matches = { string.match(msg.text, "^/bold (.*)") }
+  elseif msg.text:match("^بولد (.*)") then
+	local matches = { string.match(msg.text, "^بولد (.*)") }
 	local text = '*'..matches[1]..'*'
   sendMessage(msg.chat.id, text, true, false, true)
 
@@ -256,8 +237,8 @@ function msg_processor(msg)
 	local channel = matches[1]
 	sendMessage(channel, text, true, false, true)
 
-  elseif msg.text:match("^/italic (.*)") then
-	local matches = { string.match(msg.text, "^/italic (.*)") }
+  elseif msg.text:match("^کج (.*)") then
+	local matches = { string.match(msg.text, "^کج (.*)") }
 	local text = '_'..matches[1]..'_'
 	sendMessage(msg.chat.id, text, true, false, true)
 
@@ -267,8 +248,8 @@ function msg_processor(msg)
 	local channel = matches[1]
 	sendMessage(channel, text, true, false, true)
 
- elseif msg.text:match("^/link (.*) (.*)") then
- local matches = { string.match(msg.text, "^/link (.*) (.*)") }
+ elseif msg.text:match("^لینک (.*) (.*)") then
+ local matches = { string.match(msg.text, "^لینک (.*) (.*)") }
  local text = '['..matches[2]..']('..matches[1]..')'
  sendMessage(msg.chat.id, text, true, false, true)
 
@@ -278,8 +259,8 @@ elseif msg.text:match("^/linkch (.*) (.*) (.*)") then
  local channel = matches[1]
  sendMessage(channel, text, true, false, true)
 
- elseif msg.text:match("^/code (.*)") then
- local matches = { string.match(msg.text, "^/code (.*)") }
+ elseif msg.text:match("^کد (.*)") then
+ local matches = { string.match(msg.text, "^کد (.*)") }
  local text = '`'..matches[1]..'`'
  sendMessage(msg.chat.id, text, true, false, true)
 
