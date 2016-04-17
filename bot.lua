@@ -9,7 +9,7 @@ local bot_api_key = "207507960:AAEFtYde193lStGc9pwnOU_2TJpWcrknoKk"
 local BASE_URL = "https://api.telegram.org/bot"..bot_api_key
 local BASE_FOLDER = ""
 local start = [[
-🤖 لیست دستورات ربات کمکی آویرا :
+🤖 لیست دستورات ربات هایپر :
 
 🔶 بولد متن
 دریافت یک متن بولد
@@ -28,6 +28,9 @@ _فقط یک استیکر ارسال کنید_
 
 🔷 تبدیل عکس به استیکر
 _فقط یک استیکر ارسال کنید_
+
+Support : @avirateambot
+OtherBot : @avirabot
 ]] 
 
 -------
