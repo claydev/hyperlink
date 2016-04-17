@@ -5,22 +5,22 @@ URL = require('socket.url')
 JSON = require('dkjson')
 HTTPS = require('ssl.https')
 ----config----
-local bot_api_key = "207507960:AAEFtYde193lStGc9pwnOU_2TJpWcrknoKk"
+local bot_api_key = "201420684:AAHC3hQ7OJQX5brnQiEe5m-QEVnjygy70nw"
 local BASE_URL = "https://api.telegram.org/bot"..bot_api_key
 local BASE_FOLDER = ""
 local start = [[
 🤖 لیست دستورات ربات هایپر :
 
-🔶 بولد متن
+🔶 بولد (متن)
 دریافت یک متن بولد
 
-🔷 کج متن
+🔷 کج (متن)
 دریافت متن _کج_
 
-🔶 لینک (متن( (آدرس)
+🔶 لینک (متن) (آدرس)
 دریافت متن به صورت لینک
 
-🔷 کد متن
+🔷 کد (متن)
 دریافت متن به صورت کامپیوتری
 
 🔶 تبدیل استیکر به عکس
